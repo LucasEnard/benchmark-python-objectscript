@@ -103,7 +103,7 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 
 Clone/git pull the repo into any local directory e.g. like it is shown below:
 ```
-$ git clone https://github.com/grongierisc/iris-python-flask-api-template.git
+$ git clone https://github.com/LucasEnard/benchmark-python-objectscript.git
 ```
 
 Open the terminal in this directory and run:
@@ -115,7 +115,7 @@ $ docker-compose up -d --build
 
 This repository is ready for [VS Code](https://code.visualstudio.com/).
 
-Open the locally-cloned `formation-template-python` folder in VS Code.
+Open the locally-cloned `benchmark-python-objectscript` folder in VS Code.
 
 If prompted (bottom right corner), install the recommended extensions.
 
