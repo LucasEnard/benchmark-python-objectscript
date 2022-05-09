@@ -1,10 +1,11 @@
 # 1. benchmark-python-objectscript
 This is a benchmark built in python and objectscript in InterSystems IRIS.
-The objective is to compare the speed of each implementation.
+The objective is to compare the speed for sending back and forth a thousand request/message from a BP to a BO in python and in objectscript.
+
 
 - [1. benchmark-python-objectscript](#1-benchmark-python-objectscript)
-- [2. How it works](#2-how-it-works)
 - [3. Results](#3-results)
+- [2. How it works](#2-how-it-works)
 - [4. Prerequisites](#4-prerequisites)
 - [5. Installation](#5-installation)
   - [5.1. Installation for development](#51-installation-for-development)
@@ -15,6 +16,42 @@ The objective is to compare the speed of each implementation.
   - [7.1. Dockerfile](#71-dockerfile)
   - [7.2. .vscode/settings.json](#72-vscodesettingsjson)
   - [7.3. .vscode/launch.json](#73-vscodelaunchjson)
+
+
+
+# 3. Results
+
+**IMPORTANT** : Here are the results of time in seconds, for sending **1000 messages** *back and forth* from a `bp` to a `bo` using python, graph objectscript and objectscript
+
+|  Messages of 10 strings| Time (seconds) for 1000 messages back and forth |
+|------------------------|------------------|
+| Python BP              | 1.8              |
+| BPL                    | 1.8              |
+| ObjectScript           | 1.4              |
+
+|  Messages of 10 objects| Time (seconds) for 1000 messages back and forth |
+|------------------------|------------------|
+| Python BP              | 3.2              |
+| BPL                    | 2.1              |
+| ObjectScript           | 1.8              |
+
+
+
+The function in the row have x times the time of the function in the column :
+|  Messages of 10 strings| Python     | BPL                    | ObjectScript     |
+|------------------------|------------|------------------------|------------------|
+| Python                 | 1          | 1                      | 1.3              |
+| BPL                    | 1          | 1                      | 1.3              |
+| ObjectScript           | 0.76       | 0.76                   | 1                |
+
+For example, the first row tells us that Python string time is 1x the time of the Objectscript graph string function and 1.3x the time of the Objectscript string function.<br> ( thanks to the first table we can verifiy our results : <br> 1.3 * 1.4 = 1.8 <br> 1.3 is the x in the table in the first row last column, 1.4s is the time for the string messages in objectscript seen in the first table of this section and 1.8s is in fact the time for the string messages in python that we can find by seeking into the first table of this section or by the calculus as shown before.)
+
+We have, the function in the row having x times the time of the function in the column :
+|  Messages of 10 objects| Python obj | ObjectScript graph obj | ObjectScript obj |
+|------------------------|------------|------------------------|------------------|
+| Python obj             | 1          | 1.5                    | 1.8              |
+| ObjectScript graph obj | 0.66       | 1                      | 1.2              |
+| ObjectScript obj       | 0.55       | 0.83                   | 1                |
 
 # 2. How it works
 
@@ -51,43 +88,6 @@ In objectscript:<br>
 We have 4 business processes. One for str, one for obj, one for str but made using the graph function of the portal and one for the obj but made using the graph function of the portal.
 
 Using the test function, call the one you want to try and you will have the result displayed directly in the trace.
-
-# 3. Results
-
-|                        | Speed (seconds ) |
-|------------------------|------------------|
-| Python str             | 1.8              |
-| ObjectScript graph str | 1.8              |
-| ObjectScript str       | 1.4              |
-| Python obj             | 3.2              |
-| ObjectScript graph obj | 2.1              |
-| ObjectScript obj       | 1.8              |
-
-
-We have, the function in the row having x times the speed of the function in the column :
-|                        | Python str | ObjectScript graph str | ObjectScript str |
-|------------------------|------------|------------------------|------------------|
-| Python str             | 1          | 1                      | 1.3              |
-| ObjectScript graph str | 1          | 1                      | 1.3              |
-| ObjectScript str       | 0.76       | 0.76                   | 1                |
-
-Here, the first row tells us that Python str speed is 1x the speed of the Objectscript graph str function and 1.3x the speed of the Objectscript str function ( thanks to the first table, 1.3 * 1.4 = 1.8 )
-
-
-|                        | Python obj | ObjectScript graph obj | ObjectScript obj |
-|------------------------|------------|------------------------|------------------|
-| Python obj             | 1          | 1.5                    | 1.8              |
-| ObjectScript graph obj | 0.66       | 1                      | 1.2              |
-| ObjectScript obj       | 0.55       | 0.83                   | 1                |
-
-
-**We conclude that**;<br>
-Using the graph BP function we have a lose of performance of roughly 30% compared to the non graph BP in objectscript.
-Using the graph BP function we have a win of performance of roughly 40% compared to the python BP.
-Using the python BP we have a lose of performance of roughly 80% compared to the non grahp BP in objectscript.
-
-This lose of performance is the price for the use of python and it's qol functions.<br>
-It is to be noted that it still allows us to transmit a thousand request/message holding information in a matter of seconds.
 
 # 4. Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
