@@ -71,7 +71,7 @@ We have, the function in the row having x times the speed of the function in the
 | ObjectScript graph str | 1          | 1                      | 1.3              |
 | ObjectScript str       | 0.76       | 0.76                   | 1                |
 
-Here,the first row tells us that Python str speed is 1x the speed of the Objectscript graph str function and 1.3x the speed of the Objectscript str function ( thanks to the first table, 1.3 * 1.4 = 1.8 )
+Here, the first row tells us that Python str speed is 1x the speed of the Objectscript graph str function and 1.3x the speed of the Objectscript str function ( thanks to the first table, 1.3 * 1.4 = 1.8 )
 
 
 |                        | Python obj | ObjectScript graph obj | ObjectScript obj |
@@ -80,9 +80,13 @@ Here,the first row tells us that Python str speed is 1x the speed of the Objects
 | ObjectScript graph obj | 0.66       | 1                      | 1.2              |
 | ObjectScript obj       | 0.55       | 0.83                   | 1                |
 
+We conclude that;<br>
+Using the graph BP function we have a lose of performance of roughly 30% compared to the non graph BP in objectscript.
+Using the graph BP function we have a win of performance of roughly 40% compared to the python BP.
+Using the python BP we have a lose of performance of roughly 80% compared to the non grahp BP in objectscript.
 
-
-
+This lose of performance is the price for the use of python and it's qol functions.<br>
+It is to be noted that it still allows us to transmit a thousand request/message holding information in a matter of seconds.
 
 # 4. Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
