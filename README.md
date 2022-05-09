@@ -54,8 +54,6 @@ Using the test function, call the one you want to try and you will have the resu
 
 # 3. Results
 
-We have, from the the row having x times the speed of the column :
-
 |                        | Speed (seconds ) |
 |------------------------|------------------|
 | Python str             | 1.8              |
@@ -66,6 +64,7 @@ We have, from the the row having x times the speed of the column :
 | ObjectScript obj       | 1.8              |
 
 
+We have, the function in the row having x times the speed of the function in the column :
 |                        | Python str | ObjectScript graph str | ObjectScript str |
 |------------------------|------------|------------------------|------------------|
 | Python str             | 1          | 1                      | 1.3              |
