@@ -21,7 +21,11 @@ The objective is to compare the speed for sending back and forth a thousand requ
 
 # 2. Results
 
-**IMPORTANT** : Here are the results of time in seconds, for sending **1000 messages** *back and forth* from a `bp` to a `bo` using python, graph objectscript and objectscript
+**IMPORTANT** : Here are the results of time in seconds, for sending **1000 messages** *back and forth* from a `bp` to a `bo` using python, graph objectscript and objectscript.
+
+String messages are composed of ten string variables.
+
+Object messages are composed of ten object variables, each object as it's own int, float, str and List(str).
 
 |  Messages strings| Time (seconds) for 1000 messages back and forth |
 |------------------------|------------------|
@@ -47,11 +51,11 @@ The function in the row have x times the time of the function in the column :
 For example, the first row tells us that Python string time is 1x the time of the Objectscript graph string function and 1.3x the time of the Objectscript string function.<br> ( thanks to the first table we can verifiy our results : <br> 1.3 * 1.4 = 1.8 <br> 1.3 is the x in the table in the first row last column, 1.4s is the time for the string messages in objectscript seen in the first table of this section and 1.8s is in fact the time for the string messages in python that we can find by seeking into the first table of this section or by the calculus as shown before.)
 
 We have, the function in the row having x times the time of the function in the column :
-|  Messages objects| Python obj | ObjectScript graph obj | ObjectScript obj |
+|  Messages objects| Python | BPL | ObjectScript |
 |------------------------|------------|------------------------|------------------|
-| Python obj             | 1          | 1.5                    | 1.8              |
-| ObjectScript graph obj | 0.66       | 1                      | 1.2              |
-| ObjectScript obj       | 0.55       | 0.83                   | 1                |
+| Python             | 1          | 1.5                    | 1.8              |
+| BPL | 0.66       | 1                      | 1.2              |
+| ObjectScript        | 0.55       | 0.83                   | 1                |
 
 # 3. How it works
 
