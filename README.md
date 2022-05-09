@@ -80,7 +80,8 @@ Here, the first row tells us that Python str speed is 1x the speed of the Object
 | ObjectScript graph obj | 0.66       | 1                      | 1.2              |
 | ObjectScript obj       | 0.55       | 0.83                   | 1                |
 
-We conclude that;<br>
+
+**We conclude that**;<br>
 Using the graph BP function we have a lose of performance of roughly 30% compared to the non graph BP in objectscript.
 Using the graph BP function we have a win of performance of roughly 40% compared to the python BP.
 Using the python BP we have a lose of performance of roughly 80% compared to the non grahp BP in objectscript.
