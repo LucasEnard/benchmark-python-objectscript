@@ -4,8 +4,8 @@ The objective is to compare the speed for sending back and forth a thousand requ
 
 
 - [1. benchmark-python-objectscript](#1-benchmark-python-objectscript)
-- [3. Results](#3-results)
-- [2. How it works](#2-how-it-works)
+- [2. Results](#2-results)
+- [3. How it works](#3-how-it-works)
 - [4. Prerequisites](#4-prerequisites)
 - [5. Installation](#5-installation)
   - [5.1. Installation for development](#51-installation-for-development)
@@ -19,7 +19,7 @@ The objective is to compare the speed for sending back and forth a thousand requ
 
 
 
-# 3. Results
+# 2. Results
 
 **IMPORTANT** : Here are the results of time in seconds, for sending **1000 messages** *back and forth* from a `bp` to a `bo` using python, graph objectscript and objectscript
 
@@ -53,7 +53,7 @@ We have, the function in the row having x times the time of the function in the 
 | ObjectScript graph obj | 0.66       | 1                      | 1.2              |
 | ObjectScript obj       | 0.55       | 0.83                   | 1                |
 
-# 2. How it works
+# 3. How it works
 
 In `/src` you can find two folders, one for the python code and one for the objectscript code RESPECTIVELY `/python` and `/objectscript`.<br>
 
