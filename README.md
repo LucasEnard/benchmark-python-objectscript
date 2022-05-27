@@ -61,6 +61,8 @@ We have, the function in the row having x times the time of the function in the 
 
 In `/src` you can find two folders, one for the python code and one for the objectscript code RESPECTIVELY `/python` and `/objectscript`.<br>
 
+Open the production via the management portal that was already created for the `User`user.
+
 For each we have :
 
 - An object, in `src/python/obj.py` or `src/objectscript/obj/BenchObj.cls` that is made of an int, a float, a string, and a list of string.
@@ -135,6 +137,9 @@ By opening the folder remote you enable VS Code and any terminals you open withi
 
 <img width="1614" alt="PythonInterpreter" src="https://user-images.githubusercontent.com/47849411/145864423-2de24aaa-036c-4beb-bda0-3a73fe15ccbd.png">
 
+## 5.4 The production
+
+A production was already created and you just need to open it via the management portal.
 
 # 6. How to start coding
 This repository is ready to code in VSCode with InterSystems plugins.
