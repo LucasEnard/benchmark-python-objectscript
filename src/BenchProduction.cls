@@ -1,9 +1,9 @@
-Class Python.NewProduction Extends Ens.Production
+Class Python.BenchProduction Extends Ens.Production
 {
 
 XData ProductionDefinition
 {
-<Production Name="Python.NewProduction" TestingEnabled="true" LogGeneralTraceEvents="false">
+<Production Name="Python.BenchProduction" TestingEnabled="true" LogGeneralTraceEvents="false">
   <Description></Description>
   <ActorPoolSize>2</ActorPoolSize>
   <Item Name="Python.BenchBo" Category="" ClassName="Python.BenchBo" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">

@@ -12,10 +12,11 @@
  zn "USER"
 
  do ##class(%Library.EnsembleMgr).EnableNamespace("USER",1)
- zw $SYSTEM.OBJ.ImportDir("irisdev/app/src/python", "*.cls", "cubk", .tErrors, 1)
  zpm "install pex-embbeded-python" 
  
  zw ##class(Grongier.PEX.Utils).RegisterComponent("bp","BenchBp","/irisdev/app/src/python/",1,"Python.BenchBp")
  zw ##class(Grongier.PEX.Utils).RegisterComponent("bo","BenchBo","/irisdev/app/src/python/",1,"Python.BenchBo")
+
+ zw $SYSTEM.OBJ.ImportDir("/irisdev/app/src/", "*.cls", "cubk", .tErrors, 1)
 
  halt
